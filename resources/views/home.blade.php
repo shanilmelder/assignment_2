@@ -46,7 +46,7 @@
          <div class="form-group mb-2">
             <select class="form-control" aria-label="">
               <option selected>Select type of Energy</option>
-              @foreach ($energyTypes as $energyType)
+              @foreach($energyTypes as $energyType)
                 <option value="{{ $energyType->id }}">{{$energyType->description}}</option>
               @endforeach
             </select>

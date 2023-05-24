@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Zone;
+use App\EnergyType;
 
 class HomeController extends Controller
 {
@@ -24,8 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $zones =DB::table('zones')->where('is_active', true)->get();
-        $energyTypes =DB::table('energy_types')->where('is_active', true)->get();
+        $zones = Zone::where('is_active', true)->get();
+        $energyTypes = EnergyType::where('is_active', true)->get();
         return view('home', compact('zones', 'energyTypes'));
     }
 }

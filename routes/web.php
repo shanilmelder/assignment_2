@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/signup', function () {
     return view('register');
@@ -25,8 +23,16 @@ Route::get('/signin', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::get('/trading-master', 'TradingController@index')->name('trading-master');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/trading-master-save', 'TradingController@save')->name('trading-master-save');
+
+Route::post('/trading-master-delete', 'TradingController@delete')->name('trading-master-delete');
+
+Route::get('/trading', 'TradingController@trading')->name('trading');
+
+Route::post('/trading-sell', 'TradingController@sell')->name('trading-sell');
+
+Route::post('/trading-buy', 'TradingController@buy')->name('trading-buy');

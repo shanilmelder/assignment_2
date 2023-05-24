@@ -12,6 +12,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Dynamic StyleSheets added from a view would be pasted here-->
+    @yield('styles')
 </head>
 <body>
     <div id="app">
@@ -35,9 +40,14 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
+                    @if (!Auth::guest())
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        @if(Auth::user()->role == "StoreManager")
+                            <li><a href="{{ route('trading-master') }}">Trading Master</a></li>
+                        @endif
+                        <li><a href="{{ route('trading') }}">Trading</a></li>
                     </ul>
+                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -76,5 +86,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>
