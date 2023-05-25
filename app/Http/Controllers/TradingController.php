@@ -118,4 +118,11 @@ class TradingController extends Controller
             $volumeHistory->update();
         }
     }
+
+    public function viewTadeHistory()
+    {
+        $purchases = Purchase::all();
+        $sales = Sale::all();
+        return view('tradinghistory', compact('purchases', 'sales'));
+    }
 }

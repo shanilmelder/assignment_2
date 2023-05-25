@@ -144,12 +144,8 @@ table.table td .add {
                   @if(Auth::user()->role == "Buyer")
                    <button type="button" class="btnBuy btn btn-danger" title="" data-toggle="modal" data-target="#BuyerModal" data-original-title="Buy" data-id="{{$sale->energy_type_id}}">Buy</button>
                   @endif
-                  {{-- @if(Auth::user()->role == "Seller")
-                   <button type="button" class="btnSell btn btn-success" title="" data-toggle="modal" data-target="#SellerModal" data-original-title="Sell" data-id="{{$sale->energy_type_id}}">Sell</button>
-                  @endif --}}
                   @if(Auth::user()->role == "StoreManager")
                    <button type="button" class="btnBuy btn btn-danger" title="" data-toggle="modal" data-target="#BuyerModal" data-original-title="Buy" data-id="{{$sale->energy_type_id}}">Buy</button>
-                   {{-- <button type="button" class="btnSell btn btn-success" title="" data-toggle="modal" data-target="#SellerModal" data-original-title="Sell" data-id="{{$sale->energy_type_id}}">Sell</button> --}}
                   @endif
                 </td>
              </tr>

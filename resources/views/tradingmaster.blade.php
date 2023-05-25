@@ -37,7 +37,22 @@
 	line-height: 13px;
 }
 
+.table-title .view-history {
+	float: right;
+	height: 30px;
+	font-weight: bold;
+	font-size: 12px;
+	text-shadow: none;
+	min-width: 100px;
+	border-radius: 50px;
+	line-height: 13px;
+}
+
 .table-title .add-new i {
+	margin-right: 4px;
+}
+
+.table-title .view-history i {
 	margin-right: 4px;
 }
 
@@ -116,12 +131,15 @@ table.table td .add {
     <div class="table-wrapper">
        <div class="table-title">
           <div class="row">
-             <div class="col-sm-8">
+             <div class="col-sm-6">
                 <h2>Renewable Energy Types</h2>
              </div>
-             <div class="col-sm-4">
+             <div class="col-sm-3">
                 <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
              </div>
+             <div class="col-sm-3">
+               <button type="button" class="btn btn-info view-history" onclick="window.location='/trading-history'"><i class="fa fa-eye"></i> View Trading History</button>
+            </div>
           </div>
        </div>
        <table class="table table-bordered">

@@ -36,3 +36,11 @@ Route::get('/trading', 'TradingController@trading')->name('trading');
 Route::post('/trading-sell', 'TradingController@sell')->name('trading-sell');
 
 Route::post('/trading-buy', 'TradingController@buy')->name('trading-buy');
+
+Route::get('/user-list', 'UsersController@userList')->name('user-list');
+
+Route::get('/user-edit/{id}', 'UsersController@edit')->name('user-edit');
+
+Route::post('/user-update', 'UsersController@update')->name('user-update');
+
+Route::get('/trading-history', 'TradingController@viewTadeHistory')->name('trading-history');

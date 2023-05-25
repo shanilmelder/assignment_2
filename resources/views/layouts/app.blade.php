@@ -44,6 +44,7 @@
                     <ul class="nav navbar-nav">
                         @if(Auth::user()->role == "StoreManager")
                             <li><a href="{{ route('trading-master') }}">Trading Master</a></li>
+                            <li><a href="{{ route('user-list') }}">User Management</a></li>
                         @endif
                         <li><a href="{{ route('trading') }}">Trading</a></li>
                     </ul>
@@ -72,6 +73,11 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
+                                    </li>
+                                    <li>
+                                        <a href="/user-edit/{{ Auth::user()->id }}">
+                                            Edit Profile
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
